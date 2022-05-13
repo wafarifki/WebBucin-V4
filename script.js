@@ -4,8 +4,6 @@ var i = 0;
 var txt = "Hari demi hari telah kita berdua lewati bersama, baik keadaan suka maupun duka, saling melengkapi dan saling mengasihi sebagai pasangan. Yang aku tahu, berada di sampingmu adalah kebahagiaan terbesar untukku. Terima kasih karena membuatku menjadi orang yang lebih baik dengan cinta darimu. Pada hari ini, yang merupakan hari istimewa untuk kita berdua, aku mau ngucapin, happy anniversary sayangku. Aku sayang kamu Annisa Aulia 💜";
 var speed = 90;
 
-Gassngetik();
-
 anime.timeline({ loop: true })
 .add({
     targets: ".ml1 .letter",
@@ -33,14 +31,6 @@ anime.timeline({ loop: true })
     delay: 1000,
 });
 
-function Gassngetik() {
-    if (i < txt.length) {
-        document.getElementById("tekss").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(Gassngetik, speed);
-    }
-}
-
 var elem = document.getElementById("bodi");
 
 function openFullscreen() {
@@ -49,9 +39,26 @@ function openFullscreen() {
     document.getElementById("tembok1").style.display = "none";
     document.getElementById("tembok2").style.display = "block";
     document.getElementById('mySound').play();
+    Gassngetik();
   } else if (elem.webkitRequestFullscreen) { /* Safari */
     elem.webkitRequestFullscreen();
+    document.getElementById("tembok1").style.display = "none";
+    document.getElementById("tembok2").style.display = "block";
+    document.getElementById('mySound').play();
+    Gassngetik();
   } else if (elem.msRequestFullscreen) { /* IE11 */
     elem.msRequestFullscreen();
+    document.getElementById("tembok1").style.display = "none";
+    document.getElementById("tembok2").style.display = "block";
+    document.getElementById('mySound').play();
+    Gassngetik();
   }
+}
+
+function Gassngetik() {
+    if (i < txt.length) {
+        document.getElementById("tekss").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(Gassngetik, speed);
+    }
 }
